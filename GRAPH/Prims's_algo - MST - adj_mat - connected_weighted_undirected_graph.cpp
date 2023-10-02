@@ -17,7 +17,7 @@ int prims(vector<pair<int,int>> adj[],int v){
         mset[u]=true;
         
         for(auto x:adj[u])
-            if(!mset[x.first])
+            if(mset[x.first] == false)
                 key[x.first]=min(key[x.first],x.second);
     }
     return res;
