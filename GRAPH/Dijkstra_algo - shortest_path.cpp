@@ -23,8 +23,10 @@ vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
         vis[u]=true;
 
         for(auto x:adj[u])
-            if(vis[x.first] == false && dist[x]>dist[u]+x.second)
+            if(vis[x.first] == false && dist[x]>dist[u]+x.second){
+                dist[x.first]=dist[u]+x.second;
                 pq.push({dist[u]+x.second,x.first});
+            }
     }
     return dist;
 }
