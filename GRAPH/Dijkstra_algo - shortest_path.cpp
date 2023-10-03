@@ -8,18 +8,15 @@ vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
     pq.push({0,src});
     dist[src]=0;
 
-    int res=0;
-
     while(!pq.empty()){
         auto curr=pq.top();
         pq.pop();
         
-        int wt=curr.first;
         int u=curr.second;
 
         if(vis[u] == true)
             continue;
-        res+=wt;
+        
         vis[u]=true;
 
         for(auto x:adj[u])
@@ -30,5 +27,5 @@ vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
     }
     return dist;
 }
-T.C = O(V logV)+O((V+E)logV) =>O(ElogV)
-S.C = O(V+E)
+//T.C = O(V logV)+O((V+E)logV) =>O(ElogV)
+//S.C = O(V+E)
