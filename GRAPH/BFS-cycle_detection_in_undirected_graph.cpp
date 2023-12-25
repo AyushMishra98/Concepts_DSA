@@ -1,3 +1,5 @@
+//T.C=O(V+E)
+//A.S=O(V)
 bool BFScycle(vector<int> adj[],int s,bool vis[]){
     vis[s]=true;
     queue<pair<int,int>> q;
