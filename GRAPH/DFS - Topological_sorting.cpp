@@ -4,7 +4,7 @@ void DFSRec(vector<int> adj[],bool vis[],stack<int> &st,int s){
     for(auto x:adj[s])
         if(vis[x]==false)
             DFSRec(adj,vis,st,x);
-    st.push(idx);
+    st.push(s);
 }
 //graph may be disconnected,source may  not be given
 void dfsTopologicalSort(vector<int> adj[],int v){
