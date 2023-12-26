@@ -14,10 +14,6 @@ void dfsTopologicalSort(vector<pair<int,int>> adj[],int v,stack<int>& st){
     for(int i=0;i<v;i++)
         if(vis[i] == false)
             DFSRec(adj,vis,st,i);
-    while(!st.empty()){
-        cout<<st.top()<<" ";
-        st.pop();
-    }
 }
 void shortestPath(vector<pair<int,int>> adj[],int v,stack<int> &st,int s){
     int dist[v];
@@ -34,7 +30,4 @@ void shortestPath(vector<pair<int,int>> adj[],int v,stack<int> &st,int s){
                     dist[x.first] = dist[curr]+x.second; 
         }
     }
-    for(auto x:dist)
-        cout<<x<<" ";
-    cout<<endl;
 }
