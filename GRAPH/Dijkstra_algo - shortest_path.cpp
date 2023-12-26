@@ -10,11 +10,9 @@ vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
     dist[src]=0;
 
     while(!pq.empty()){
-        auto curr=pq.top();
+        int u=pq.top().second;
         pq.pop();
         
-        int u=curr.second;
-
         if(vis[u] == true)
             continue;
         
@@ -23,7 +21,7 @@ vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
         for(auto x:adj[u])
             if(vis[x.first] == false && dist[x.first]>dist[u]+x.second){
                 dist[x.first]=dist[u]+x.second;
-                pq.push({dist[u]+x.second,x.first});
+                pq.push({dist[x.first],x.first});
             }
     }
     return dist;
