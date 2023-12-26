@@ -1,5 +1,7 @@
 void topologicalSort(vector<int> adj[],int v){
-    int indgre[v]={0};
+    int indgre[v];
+    memset(indgre,0,sizeof(indgre));
+    
     for(int i=0;i<v;i++)
         for(auto x:adj[i])
             indgre[x]++;
