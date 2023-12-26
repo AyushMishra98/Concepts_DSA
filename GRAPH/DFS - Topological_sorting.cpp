@@ -14,8 +14,4 @@ void dfsTopologicalSort(vector<int> adj[],int v,stack<int>& st){
     for(int i=0;i<v;i++)
         if(vis[i] == false)
             DFSRec(adj,vis,st,i);
-    while(!st.empty()){
-        cout<<st.top()<<" ";
-        st.pop();
-    }
 }
