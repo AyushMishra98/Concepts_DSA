@@ -1,6 +1,5 @@
 void DFSRec(vector<int> adj[],bool vis[],int idx){
     vis[idx]=true;
-    cout<<idx<<" ";
     for(auto x:adj[idx])
         if(vis[x]==false)
             DFSRec(adj,vis,x);
