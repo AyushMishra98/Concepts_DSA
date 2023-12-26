@@ -1,8 +1,9 @@
 //works for both directed and undirected graph 
 //used to find shortest path
 vector<int> dijkstra(vector<pair<int,int>> adj[],int v,int src){
-    bool vis[v]={false};
+    vector<bool> vis(v,false);
     vector<int> dist(v,INT_MAX);
+    
     //{x1,x2}=> x1-weight ,x2-edge
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
     pq.push({0,src});
