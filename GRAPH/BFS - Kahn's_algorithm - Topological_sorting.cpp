@@ -1,3 +1,4 @@
+//graph had to be DAG
 void topologicalSort(vector<int> adj[],int v){
     int indgre[v];
     memset(indgre,0,sizeof(indgre));
