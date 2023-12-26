@@ -1,29 +1,34 @@
-void DFSRec(vector<pair<int,int>> adj[],bool vis[],stack<int> &s,int idx){
-    vis[idx]=true;
+void DFSRec(vector<int> adj[],bool vis[],stack<int> &st,int s){
+    vis[s]=true;
     
-    for(auto x:adj[idx])
-        if(vis[x.first]==false)
-            DFSRec(adj,vis,s,x.first);
-    s.push(idx);
+    for(auto x:adj[s])
+        if(vis[x]==false)
+            DFSRec(adj,vis,st,x);
+    st.push(idx);
 }
 //graph may be disconnected,source may  not be given
-void dfsTopologicalSort(vector<pair<int,int>> adj[],int v,stack<int> &s){
+void dfsTopologicalSort(vector<int> adj[],int v){
     bool vis[v+1];
     memset(vis,false,sizeof(vis));
 
+    stack<int> st;
     for(int i=0;i<v;i++)
         if(vis[i] == false)
-            DFSRec(adj,vis,s,i);
+            DFSRec(adj,vis,st,i);
+    while(!st.empty()){
+        cout<<st.top()<<" ";
+        st.pop();
+    }
 }
-void shortestPath(vector<pair<int,int>> adj[],int v,stack<int> &s,int src){
+void shortestPath(vector<pair<int,int>> adj[],int v,stack<int> &st,int s){
     int dist[v];
     for(int i=0;i<v;i++)
         dist[i]=INT_MAX;
 
-    dist[src]=0;
-    while(!s.empty()){
-        int curr=s.top();
-        s.pop();
+    dist[s]=0;
+    while(!st.empty()){
+        int curr=st.top();
+        st.pop();
         if(dist[curr] != INT_MAX){
             for(auto x:adj[curr])
                 if(dist[x.first] > dist[curr]+x.second)
