@@ -1,13 +1,13 @@
-bool DFSRec(vector<int> adj[],bool vis[],bool anc[],int idx){
-    vis[idx]=true;
-    anc[idx]=true;
+bool DFSRec(vector<int> adj[],bool vis[],bool anc[],int s){
+    vis[s]=true;
+    anc[s]=true;
     
-    for(auto x:adj[idx])
+    for(auto x:adj[s])
         if(vis[x]==false && DFSRec(adj,vis,anc,x))
             return true;
         else if(anc[x]==true)
             return true;
-    anc[idx]=false;
+    anc[s]=false;
     return false;
 }
 //graph may be disconnected,source may  not be given
