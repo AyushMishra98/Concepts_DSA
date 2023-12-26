@@ -10,7 +10,9 @@ void topologicalSort(vector<int> adj[],int v){
     while(!q.empty()){
         int temp=q.front();
         q.pop();
-
+        
+        cout<<temp<<" ";
+        
         for(auto x:adj[temp]){
             indgre[x]--;
             if(indgre[x] == 0)
