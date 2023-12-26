@@ -7,11 +7,10 @@ void DFSRec(vector<int> adj[],bool vis[],stack<int> &st,int s){
     st.push(s);
 }
 //graph may be disconnected,source may  not be given
-void dfsTopologicalSort(vector<int> adj[],int v){
+void dfsTopologicalSort(vector<int> adj[],int v,stack<int>& st){
     bool vis[v+1];
     memset(vis,false,sizeof(vis));
 
-    stack<int> st;
     for(int i=0;i<v;i++)
         if(vis[i] == false)
             DFSRec(adj,vis,st,i);
