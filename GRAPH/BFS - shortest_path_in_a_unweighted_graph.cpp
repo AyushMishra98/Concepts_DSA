@@ -1,6 +1,6 @@
 //BFS based
 // v-no. of vertices (size of adj)
-void shortestPath(vector<int> adj[],int v,int s){
+vector<int> shortestPath(vector<int> adj[],int v,int s){
     vector<bool> vis(v,false);
     vector<int> dist(v,INT_MAX);
 
@@ -20,6 +20,7 @@ void shortestPath(vector<int> adj[],int v,int s){
             }
         }
     }
+    return dist;
 }
 //T.C=O(V+E)
 //A.S=O(V)
