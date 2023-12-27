@@ -14,7 +14,7 @@ vector<int> shortestPath(vector<int> adj[],int v,int s){
         q.pop();
         for(auto x:adj[temp]){
             if(vis[x] == false){
-                dist[x]=min(dist[x],1+dist[temp]);
+                dist[x]=dist[temp]+1;
                 vis[x]=true;
                 q.push(x);
             }
