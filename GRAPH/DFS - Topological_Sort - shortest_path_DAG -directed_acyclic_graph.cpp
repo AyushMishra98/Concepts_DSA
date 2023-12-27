@@ -18,7 +18,7 @@
         
         return st;
     }
-    vector<int> shortestPath(vector<pair<int,int>> adj[],int v,int s){
+    vector<int> shortestPathDAG(vector<pair<int,int>> adj[],int v,int s){
       vector<int> dist(v,INT_MAX);
     
         stack<int> st=dfsTopologicalSort(adj,v,st);
