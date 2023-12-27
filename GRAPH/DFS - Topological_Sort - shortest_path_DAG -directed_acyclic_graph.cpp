@@ -21,7 +21,7 @@
     vector<int> shortestPathDAG(vector<pair<int,int>> adj[],int v,int s){
       vector<int> dist(v,INT_MAX);
     
-        stack<int> st=dfsTopologicalSort(adj,v,st);
+        stack<int> st=dfsTopologicalSort(adj,v);
 
         dist[s]=0;
         while(!st.empty()){
