@@ -1,3 +1,8 @@
+//Bellman Ford is a SINGLE SOURCE SHORTEST PATH
+//Bellman Ford helps in FINDING NEGATIVE CYCLES IN DIRECTED GRAPH
+//works for only directed graphs
+//to apply for undirected graph convert to directed graph
+
 vector<int> bellman_ford(int V, vector<vector<int>>& e, int S) {
         vector<int> dist(V,1e8);
         dist[S]=0;
