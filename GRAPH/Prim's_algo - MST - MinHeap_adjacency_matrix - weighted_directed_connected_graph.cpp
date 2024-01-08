@@ -1,7 +1,7 @@
 // MST- Minimum spanning tree
 // spanning tree - tree with all the vertices with no cycle
 int prims(vector<pair<int,int>> adj[],int v){
-    bool vis[v]={false};
+    vector<bool> vis(v,false);
 
     //{x1,x2}=> x1-weight ,x2-edge
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
