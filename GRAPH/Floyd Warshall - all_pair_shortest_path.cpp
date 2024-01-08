@@ -1,11 +1,12 @@
 //all pair shortest path - Floyd Warshall algorithm
 void shortest_distance(vector<vector<int>>&m){
-	//non reachable nodes are represented with 1e9 instead of -1
 	    int n=m.size();
 	                
 	   for(int k=0;k<n;k++){
 	       for(int i=0;i<n;i++){
 	           for(int j=0;j<n;j++){
+			   if(m[i][k] == INT_MAX ||  m[k][j] == INT_MAX)
+				   continue;
 	               m[i][j]=min(m[i][j],m[i][k]+m[k][j]);
 	           }
 	       }
