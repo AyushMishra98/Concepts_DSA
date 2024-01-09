@@ -1,8 +1,9 @@
 //T.C=O(4α)=constant time
 class DisjointSet{
-    vector<int> rank,parent;
-    public:
     
+    public:
+    vector<int> rank,parent;
+
     DisjointSet(int n){
         rank.resize(n+1,0);
         parent.resize(n+1);
