@@ -30,6 +30,6 @@ class DisjointSet{
     }
 };
 //T.C=O(4α)=constant time
-//ds.DisjointSet(n);
+//DisjointSet ds(n);
 //ds.unionBysize(n1,n2);
 //ds.findUPar(x);
