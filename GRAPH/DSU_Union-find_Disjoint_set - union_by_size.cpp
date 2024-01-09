@@ -15,8 +15,8 @@ class DisjointSet{
         return parent[node]=findUPar(parent[node]);
     }
     void unionBySize(int u,int v){
-        int ulp_u=parent[u];
-        int ulp_v=parent[v];
+        int ulp_u=findUPar(u);
+        int ulp_v=findUPar(v);
 
         if(ulp_u == ulp_v)
             return;
