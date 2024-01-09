@@ -29,7 +29,7 @@ class DisjointSet{
         }
     }
 };
-//T.C=O(4*alpha)=constant time
+//T.C=O(4α)=constant time
 //ds.DisjointSet(n);
 //ds.unionBysize(n1,n2);
 //ds.findUPar(x);
