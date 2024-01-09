@@ -1,8 +1,8 @@
 //Union by size makes more sense than union by rank
 class DisjointSet{
-    vector<int> size,parent;
     public:
-    
+    vector<int> size,parent;
+
     DisjointSet(int n){
         size.resize(n+1,1);
         parent.resize(n+1);
