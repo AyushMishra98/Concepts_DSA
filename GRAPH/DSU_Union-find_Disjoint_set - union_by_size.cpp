@@ -33,3 +33,4 @@ class DisjointSet{
 //DisjointSet ds(n);
 //ds.unionBysize(n1,n2);
 //ds.findUPar(x);
+//ds.parent[i];
