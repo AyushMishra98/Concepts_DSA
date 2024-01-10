@@ -30,3 +30,5 @@
         
         return bridges;
     }
+    T.C=O(V+E)
+    A.S=O(V+E)
