@@ -19,7 +19,7 @@
             }
         }
     }
-    vector<vector<int>> criticalConnections(int n,vector<int> adj[]) {
+    vector<vector<int>> bridges(int n,vector<int> adj[]) {
         vector<bool> vis(n,false);
         vector<vector<int>> bridges;
         
