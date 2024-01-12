@@ -19,7 +19,7 @@
             }
         }
     }
-    vector<vector<int>> Bridges(int n,vector<int> adj[]) {
+    vector<vector<int>> Bridges(vector<int> adj[],int n) {
         vector<bool> vis(n,false);
         vector<vector<int>> bridges;
         
