@@ -27,7 +27,7 @@
         if(child > 1 && par==-1)
             mark[node]=1;
     }
-    vector<int> articulationPoints(int n, vector<int>adj[]) {
+    vector<int> articulationPoints(vector<int>adj[],int n) {
         vector<bool> vis(n,false);
         
         vector<int> mark(n,0);
