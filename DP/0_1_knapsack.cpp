@@ -1,4 +1,4 @@
-//Memoization solution
+//𝐌𝐞𝐦𝐨𝐢𝐳𝐚𝐭𝐢𝐨𝐧 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧
 int maxVal(int idx,int maxW,vector<int>& w, vector<int>& v,vector<vector<int>>& dp){
 	if(idx == 0){
 		if(w[0] <= maxW)
@@ -22,3 +22,25 @@ int knapsack(vector<int> weight, vector<int> value, int n, int maxWeight)
 }
 //T.C=O(N*maxW)
 //A.S=O(N*maxW)+O(N)
+
+//𝐓𝐚𝐛𝐮𝐥𝐚𝐭𝐢𝐨𝐧 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧
+int knapsack(vector<int> wt, vector<int> val, int n, int maxW) 
+{
+	vector<vector<int>> dp(n,vector<int> (maxW+1,0));
+
+	for(int w=wt[0];w<=maxW;w++)
+		dp[0][w]=val[0];
+
+	for(int i=1;i<n;i++){
+		for(int w=0;w<=maxW;w++){
+			int notTake=dp[i-1][w];
+			int take=INT_MIN;
+			if(wt[i]<= w)
+				take=val[i]+dp[i-1][w-wt[i]];
+			dp[i][w]=max(take,notTake);
+		}
+	}
+	return dp[n-1][maxW];
+}
+//T.C=O(N*maxW)
+//A.S=O(N*maxW)
