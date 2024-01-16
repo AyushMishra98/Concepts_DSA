@@ -45,7 +45,7 @@ int knapsack(vector<int> wt, vector<int> val, int n, int maxW)
 //T.C=O(N*maxW)
 //A.S=O(N*maxW)
 
-//𝐒.𝐂=𝐎(𝐦𝐚𝐱𝐖𝐞𝐢𝐠𝐡𝐭) 𝐨𝐫 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧
+//𝐒.𝐂=𝐎(𝐦𝐚𝐱𝐖𝐞𝐢𝐠𝐡𝐭) 𝐨𝐫 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧 - 𝐭𝐰𝐨 𝐚𝐫𝐫𝐚𝐲𝐬 𝐚𝐫𝐞 𝐮𝐬𝐞𝐝
 int knapsack(vector<int> wt, vector<int> val, int n, int maxW) 
 {
 	vector<int> prev(maxW+1,0),curr(maxW+1,0);
@@ -62,6 +62,29 @@ int knapsack(vector<int> wt, vector<int> val, int n, int maxW)
 			curr[w]=max(take,notTake);
 		}
 		prev=curr;
+	}
+	return prev[maxW];
+}
+//T.C=O(N*maxW)
+//A.S=O(maxW)
+
+//𝐒.𝐂=𝐎(𝐦𝐚𝐱𝐖𝐞𝐢𝐠𝐡𝐭) 𝐨𝐫 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧 - 𝐨𝐧𝐥𝐲 𝐨𝐧𝐞  𝐚𝐫𝐫𝐚𝐲 𝐢𝐬 𝐮𝐬𝐞𝐝
+int knapsack(vector<int> wt, vector<int> val, int n, int maxW) 
+{
+	vector<int> prev(maxW+1,0);
+
+	for(int w=wt[0];w<=maxW;w++)
+		prev[w]=val[0];
+
+	for(int i=1;i<n;i++){
+		//can only be done for right to left
+		for(int w=maxW;w>=0;w--){
+			int notTake=prev[w];
+			int take=INT_MIN;
+			if(wt[i]<= w)
+				take=val[i]+prev[w-wt[i]];
+			prev[w]=max(take,notTake);
+		}
 	}
 	return prev[maxW];
 }
