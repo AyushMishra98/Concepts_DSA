@@ -44,3 +44,26 @@ int knapsack(vector<int> wt, vector<int> val, int n, int maxW)
 }
 //T.C=O(N*maxW)
 //A.S=O(N*maxW)
+
+//𝐒.𝐂=𝐎(𝐦𝐚𝐱𝐖𝐞𝐢𝐠𝐡𝐭) 𝐨𝐫 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐨𝐥𝐮𝐭𝐢𝐨𝐧
+int knapsack(vector<int> wt, vector<int> val, int n, int maxW) 
+{
+	vector<int> prev(maxW+1,0),curr(maxW+1,0);
+
+	for(int w=wt[0];w<=maxW;w++)
+		prev[w]=val[0];
+
+	for(int i=1;i<n;i++){
+		for(int w=0;w<=maxW;w++){
+			int notTake=prev[w];
+			int take=INT_MIN;
+			if(wt[i]<= w)
+				take=val[i]+prev[w-wt[i]];
+			curr[w]=max(take,notTake);
+		}
+		prev=curr;
+	}
+	return prev[maxW];
+}
+//T.C=O(N*maxW)
+//A.S=O(maxW)
