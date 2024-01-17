@@ -1,3 +1,4 @@
+//variation of LCS just make dp part of else equal to zero rather than storing maximum
 int lcs(string &t1, string &t2){
         int n1=t1.length(),n2=t2.length();
         vector<vector<int>> dp(n1+1,vector<int>(n2+1,-1));
