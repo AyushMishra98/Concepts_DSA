@@ -17,15 +17,15 @@ string longestCommonSubsequence(string t1, string t2) {
                     dp[idx1][idx2]= max(dp[idx1-1][idx2],dp[idx1][idx2-1]);
             }
         }
-        int len=dp[n][m];
+        int len=dp[n1][n2];
         string str="";
         for(int i=0;i<len;i++)
           str+='*';
 
         int idx=len-1;
-      int i=n,j=m;
+      int i=n1,j=n2;
       while(i>0 && j>0){
-      if(t1[i-1] == t2[i-1]){
+      if(t1[i-1] == t2[j-1]){
         str[idx]=t1[i-1];
         idx--;i--;j--;
       }
