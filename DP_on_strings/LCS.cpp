@@ -6,7 +6,7 @@ int LCS(int idx1,int idx2,string t1, string t2,vector<vector<int>>& dp){
         if(idx1<0 || idx2<0)
             return 0;
         
-        if(dp[idx1-1][idx2-1] == -1){
+        if(dp[idx1][idx2] == -1){
             if(t1[idx1] == t2[idx2])
             dp[idx1][idx2]=1+LCS(idx1-1,idx2-1,t1,t2,dp);
         else
