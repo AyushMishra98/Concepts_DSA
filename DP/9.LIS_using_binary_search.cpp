@@ -1,4 +1,6 @@
 //LIS using Binary Search
+//Temp array is not LIS.This method can only give length of LIS not the elements.
+
 int lengthOfLIS(vector<int>& nums) {
         vector<int> temp;
         temp.push_back(nums[0]);
