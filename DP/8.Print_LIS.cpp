@@ -5,17 +5,17 @@ vector<int> printLIS(vector<int>& nums) {
         int maxi=1;
         int lastIndex=0;
         
-        for(int idx=0;idx<n;idx++){
-            hash[idx]=idx;
-            for(int prev_idx=0;prev_idx<idx;prev_idx++){
-                if(nums[prev_idx] < nums[idx] && dp[idx]<1+dp[prev_idx] ){
-                    dp[idx]=1+dp[prev_idx];
-                    hash[idx]=prev_idx;
+        for(int i=0;i<n;i++){
+            hash[i]=i;
+            for(int prev=0;prev<i;prev++){
+                if(nums[prev] < nums[i] && dp[i]<1+dp[prev] ){
+                    dp[i]=1+dp[prev];
+                    hash[i]=prev;
                 }
             }
-            if(dp[idx] > maxi){
-                maxi=dp[idx];
-                lastIndex=idx;
+            if(dp[i] > maxi){
+                maxi=dp[i];
+                lastIndex=i;
             }
         }
         
