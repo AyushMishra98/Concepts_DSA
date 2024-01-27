@@ -1,3 +1,4 @@
+//Optimal Approach
 //T.C=O(N)+O(N)
 //A.S=O(N)
 int largestRectangleArea(vector<int>& h) {
