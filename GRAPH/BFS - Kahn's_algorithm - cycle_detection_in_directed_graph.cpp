@@ -1,4 +1,4 @@
-//Application of kan's algo
+//Application of kahn's algo
 //Based on kahn's BFS based algorithm
 bool  isCycle(vector<int> adj[],int v){
     int indgre[v]={0};
