@@ -9,12 +9,16 @@ bool BFScycle(vector<int> adj[],int s,bool vis[]){
         for(int i=0;i<sz;i++){
             auto temp=q.front();
             q.pop();
-            for(auto x:adj[temp.first]){
+
+            int node=temp.first;
+            int par=temp.second;
+            
+            for(auto x:adj[node]){
                 if(vis[x] == false){
-                    q.push({x,temp.first});
+                    q.push({x,node});
                      vis[x]=true;
                 }
-                else if(x != temp.second)
+                else if(x != par)
                     return true;
             }
         }
