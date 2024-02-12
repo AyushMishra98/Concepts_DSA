@@ -1,3 +1,4 @@
+//T.C=O(sqrt(n))
 bool isPrime(int n){
     if(n==1)
         return false;
